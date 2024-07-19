@@ -1,0 +1,33 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+# Load the necessary libraries
+```{r}
+library(shiny)
+library(ggplot2)
+library(dplyr)
+```
+
+# Load the dataset
+```{r}
+champions_league = read.csv("C:/Users/USER/Desktop/UEFA/UCL_AllTime_Performance_Table - UCL_Alltime_Performance_Table.csv")
+champions_league
+```
+
+# Check for missing values
+```{r}
+missing_values = colSums(is.na(champions_league))
+missing_values
+```
+
+# View the structure of the dataset
+```{r}
+str(champions_league)
+```
+# Summary of the dataset
+```{r}
+summary(champions_league)
+```
+

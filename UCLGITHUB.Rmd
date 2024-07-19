@@ -1,0 +1,38 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+# Load libraries
+```{r}
+library(ggplot2)
+```
+
+# Load the dataet
+```{r}
+UCL = read.csv("UCL_AllTime_Performance_Table - UCL_Alltime_Performance_Table.csv")
+UCL
+```
+
+# Summary of the dataset
+```{r}
+summary(UCL)
+```
+# Structure of the dataset
+```{r}
+str(UCL)
+```
+# Identifying missing values
+```{r}
+colSums(is.na(UCL))
+```
+
+# scatter plot
+```{r}
+ggplot(UCL, aes(x = M., y = L, label = Team)) +
+  geom_point(size = 3, color = "blue") +  # Points
+  geom_text(vjust = -0.5, hjust = 0.5) +   # Team labels
+  labs(title = "UEFA Teams Scatterplot", x = "Matches", y = "Lost") +  # Titles
+  theme_minimal()  # Theme
+```
+
